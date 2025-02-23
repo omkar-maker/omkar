@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday SANA!</title>
+    <style>
+        /* Responsive Base Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffd1dc;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 3% 5%;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 4.5rem);
+            color: #c72c41;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin: 2vh 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .message {
+            font-size: clamp(1.2rem, 3.5vw, 2rem);
+            color: #c72c41;
+            margin: 2vh auto;
+            max-width: 90%;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 1s;
+        }
+
+        /* Floating Hearts */
+        .hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            color: #c72c41;
+            animation: float 6s infinite linear;
+        }
+
+        /* Audio Button Styling */
+        #playAudioBtn {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            background-color: #c72c41;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #playAudioBtn:hover {
+            background-color: #a61e30;
+        }
+
+        /* Pop Images */
+        .pop-image {
+            position: absolute;
+            width: clamp(120px, 25vw, 220px);
+            height: clamp(120px, 25vw, 220px);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(199, 44, 65, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: popIn 1s ease-out forwards;
+            object-fit: cover;
+        }
+
+        .pop-image:hover {
+            transform: scale(1.1) rotate(5deg);
+            z-index: 3;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+            80% { transform: scale(1.1) rotate(10deg); }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    <div class="container">
+        <h1>Happy Birthday, SANA! 💖</h1>
+        <p class="message">Every moment with you is magical 🌹</p>
+    </div>
+
+    <audio id="birthdayAudio" loop>
+        <source src="happy-birthday-254480.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button id="playAudioBtn">Play Music 🎵</button>
+
+    <script>
+        document.getElementById('playAudioBtn').addEventListener('click', function() {
+            const audio = document.getElementById('birthdayAudio');
+            audio.play().catch(error => console.error("Audio playback failed:", error));
+            this.style.display = 'none';
+        });
+
+        const romanticImages = [
+            'IMG-20231110-WA0030.jpg',
+            'IMG-20240127-WA0080.jpg',
+            'IMG-20240201-WA0002.jpg',
+            'IMG20231109183936.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.38_168ec69b.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.39_d66bd265.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.39_e48f7243.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.39_f8594eec.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.40_842b9bde copy.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.40_842b9bde.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.40_a961f220.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.40_ffb16bac.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.41_2acc4c24.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.41_b2bc1196.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.41_ebb30b88.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.42_7a298f4b.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.42_6519b78d.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.42_fce97054.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.43_ac9e9559.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.43_d6c3ac5a.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.43_f68e5098.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.44_c6a2d78b.jpg',
+            'WhatsApp Image 2025-02-22 at 18.34.45_10fb604b.jpg'
+        ];
+
+
+        function createImage() {
+            const img = document.createElement('img');
+            img.className = 'pop-image';
+            img.src = romanticImages[Math.floor(Math.random() * romanticImages.length)];
+            img.style.left = Math.random() * 90 + 'vw';
+            img.style.top = Math.random() * 90 + 'vh';
+            img.style.transform = `rotate(${Math.random() * 10 - 5}deg)`;
+            document.body.appendChild(img);
+            setTimeout(() => img.remove(), 10000);
+        }
+
+        function init() {
+            for(let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+                heart.style.fontSize = Math.random() * 15 + 10 + 'px';
+                heart.innerHTML = '❤';
+                document.getElementById('hearts').appendChild(heart);
+            }
+            setInterval(createImage, 2000);
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
